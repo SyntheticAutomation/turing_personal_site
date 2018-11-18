@@ -6,6 +6,7 @@ class PersonalSite
     when '/' then index
     when '/about' then about
     when '/main.css' then css
+    when '/blog' then blog
     else
       error
     end
@@ -17,6 +18,10 @@ class PersonalSite
 
   def self.about
     render_view('about.html')
+  end
+
+  def self.blog
+    render_view('blog.html')
   end
 
   def self.error
