@@ -2,6 +2,7 @@ body {
   background-color: blue;
   color: white;
   text-align: center;
+  font-family: 'Sofia';font-size: 22px;
 }
 h1 {
     text-align: center;
