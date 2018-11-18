@@ -1,7 +1,17 @@
 body {
   background-color: blue;
   color: white;
+  text-align: center;
 }
 h1 {
     text-align: center;
+}
+/* unvisited link */
+a:link {
+    color: yellow;
+}
+
+/* visited link */
+a:visited {
+    color: white;
 }
