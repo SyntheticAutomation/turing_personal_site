@@ -1,6 +1,7 @@
 require 'rack'
 
 class PersonalSite
+
   def self.call(env)
     case env["PATH_INFO"]
     when '/' then index
@@ -8,7 +9,7 @@ class PersonalSite
     when '/main.css' then css
     when '/blog' then blog
     else
-      error
+      validate(env["PATH_INFO"])
     end
   end
 
@@ -39,4 +40,9 @@ class PersonalSite
   def self.render_static(asset)
     [200, {'Content-Type' => 'text/html'}, [File.read("./public/#{asset}")]]
   end
+
+  def self.validate(path)
+    error unless File.exist?("./public/#{path}")
+  end
+
 end
